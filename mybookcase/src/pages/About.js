@@ -3,7 +3,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div>
+        <div class="about">
             <h2>Welcome to the Bookcase Application</h2>
             <p>
                The following application was created by Connie.

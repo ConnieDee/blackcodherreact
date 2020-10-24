@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const Book = (props) => {
- const info = props.book.volumeInfo;
-const { volumeInfo: { title, authors, description, imageLinks: { thumbnail } } } = props.book};
+ //const info = props.book.volumeInfo;
+
+ const { volumeInfo: { title, authors, description, imageLinks: { thumbnail } } } = props.book 
   
 const renderAmount = () => {
   if (props.book.saleInfo && props.book.saleInfo.listPrice && props.book.saleInfo.listPrice.amount) {
@@ -26,15 +26,15 @@ const renderAuthors = () => {
   
     return (
       <div>
-        <img src={thumbnail} />
+        <img src={thumbnail} alt=""/>
         <h2>{props.title}</h2>
-        <h3>{authors.length === 1 ? authors[0] : authors.join(',')}</h3>
+        <h3>{renderAuthors()}</h3>
         <p>{renderAmount()}</p>
         <p>{description}</p>
         <button onClick={() => props.addBook(title)}>-Remove</button>
       </div>
       );
-
+};
 
 Book.propTypes = {
     volumeInfo: PropTypes.shape({title: PropTypes.string.isRequired}),

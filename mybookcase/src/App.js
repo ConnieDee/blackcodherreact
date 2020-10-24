@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { BrowserRouter, BrowserRouter as Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Booklist from './components/BookList';
 import Book from './components/Books';
 import Header from './components/Header';
+import Search from './components/Search';
 import data from './models/books.json';
 import About from './pages/About';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 const App = (props) => {
 
@@ -21,7 +23,7 @@ const App = (props) => {
     }
   }
 
-  setBooks('This many books');
+ // setBooks('This many books');
 
   function addBook(title) {
     console.log(`The Book ${title} was clicked`);
