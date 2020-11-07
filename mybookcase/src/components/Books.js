@@ -27,11 +27,12 @@ const renderAuthors = () => {
     return (
       <div>
         <img src={thumbnail} alt=""/>
-        <h2>{props.title}</h2>
+        <h2>{title}</h2>
         <h3>{renderAuthors()}</h3>
         <p>{renderAmount()}</p>
         <p>{description}</p>
-        <button onClick={() => props.addBook(title)}>-Remove</button>
+        <button onClick={() => props.addBook(title)}>+Add</button>
+        <button onClick={() => props.removeBook(title)}>-Remove</button>
       </div>
       );
 };
