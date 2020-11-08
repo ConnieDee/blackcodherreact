@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Button from 'react-bootstrap/Button';
 
 const Book = (props) => {
  //const info = props.book.volumeInfo;
@@ -12,6 +13,7 @@ const renderAmount = () => {
     }
   return 'no price available';
 }
+
 
 //function addBook(title) {
 //  console.log(`The book ${title} was clicked`);
@@ -31,8 +33,10 @@ const renderAuthors = () => {
         <h3>{renderAuthors()}</h3>
         <p>{renderAmount()}</p>
         <p>{description}</p>
-        <button onClick={() => props.addBook(title)}>+Add</button>
-        <button onClick={() => props.removeBook(title)}>-Remove</button>
+
+        <button type="button" class="btn btn-info" onClick={() => props.addBook(title)}>+Add</button>
+
+        <button type="button" class="btn btn-danger" onClick={() => props.removeBook(title)}>-Remove</button>
       </div>
       );
 };

@@ -13,7 +13,7 @@ const Search = (props) => {
 return (
     <Form onSubmit={handleSubmit}>
         <Form.Group controlId="searchKeyword">
-            <Form.Control type="keyword" placeholder="Enter Author, Title or Theme" value={props.keyword}
+            <Form.Control type="keyword" placeholder="Search by Author, Title or Theme" value={props.keyword}
             onChange={(e) => {props.setKeyword(e.target.value)}}/>
         </Form.Group>
         <button type="button" class="btn btn-light">Submit</button>
