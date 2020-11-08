@@ -18,6 +18,7 @@ return (
         {currentBooks.map((book) => (
             <React.Fragment>
                 <Book key={book.id} book={book} currentBooks={currentBooks} addBook={props.addBook} removeBook={props.removeBook} showDeleteButton={props.showDeleteButton} />
+                
                 <Pagination booksPerPage={booksPerPage} totalBooks={props.books.length} paginate={paginate} />
             </React.Fragment>
         ))}

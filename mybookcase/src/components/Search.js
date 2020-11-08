@@ -1,4 +1,7 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 
 const Search = (props) => {
     const handleSubmit = (event) => {
@@ -8,14 +11,13 @@ const Search = (props) => {
 
 
 return (
-    <form onSubmit={handleSubmit}>
-        <h1>{props.keyword && 'Search by term: ' + props.keyword}</h1>
-        <input 
-            type="text"
-            value={props.keyword}
+    <Form onSubmit={handleSubmit}>
+        <Form.Group controlId="searchKeyword">
+            <Form.Control type="keyword" placeholder="Enter Author, Title or Theme" value={props.keyword}
             onChange={(e) => {props.setKeyword(e.target.value)}}/>
-        <input type="submit"/>
-    </form>
+        </Form.Group>
+        <button type="button" class="btn btn-light">Submit</button>
+    </Form>
 )
 }
 export default Search;

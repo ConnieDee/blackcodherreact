@@ -1,7 +1,9 @@
 .about {
-    background-color: lightseagreen;
+    text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    font-color: black;
+    background-color: rosybrown;
+    color: whitesmoke;
+    padding: 7px;
 }
 h2 {
     font-size: 48pt;

@@ -3,10 +3,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Booklist from './components/BookList';
 import Book from './components/Books';
 import Header from './components/Header';
+import Bookcase from './pages/Bookcase';
 import Search from './components/Search';
 import data from './models/books.json';
 import About from './pages/About';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const App = (props) => {
@@ -38,7 +38,7 @@ const addBook = (title, id) => {
   console.log(`The book ${title} was clicked`)
 }
 
-function removeBook (id) {
+const removeBook = (title, id) => {
   const newBooks = bookcase.filter(book => book.id !==id);
   setBookcase(newBooks);
   setCount(count -1);
@@ -61,34 +61,37 @@ function removeBook (id) {
 //    return 'No books found';
 //  }
   //return (
+ //       
   //  <div>
   //    <Booklist books={books} addBook={addBook}/>
   //  </div>
   return (
-    <BrowserRouter>
+    <div className="App">
+      <BrowserRouter>
     <Route path="/" render={() => (
       <React.Fragment>
         <Header/>
         <Search findBooks={findBooks} keyword={keyword} setKeyword={setKeyword}/>
+        <br></br>
         <Booklist books={books} addBook={addBook}/>
       </React.Fragment>
     )}></Route>
 
-    <Route path="/about" render={() => (
+    <Route exact path="/about" render={() => (
       <React.Fragment>
         <About/>
-        <Booklist books={books} addBook={addBook}/>
       </React.Fragment>
     )}></Route>
 
-    <Route path="/bookcase" render={() => (
+    <Route exact path="/bookcase" render={() => (
       <React.Fragment>
         <Header/>
-        <Booklist books={books} addBook={addBook}/>
+        
       </React.Fragment>
     )}></Route>
+
     </BrowserRouter>
-    
+    </div> 
   );
 }
 export default App;

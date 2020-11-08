@@ -3,7 +3,7 @@ import './About.css';
 
 const About = () => {
     return (
-        <div class="about">
+        <div className="about">
             <h2>Welcome to the Bookcase Application</h2>
             <p>
                The following application was created by Connie.
@@ -11,7 +11,7 @@ const About = () => {
                save to a local bookcase
                Click on the "Add + " button to add a book to your bookcase.
                Use the search bar to find the latest books by name, author
-               or description
+               or description.
             </p>
         </div>
     );
